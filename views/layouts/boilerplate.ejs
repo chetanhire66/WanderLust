@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WanderLust</title>
+    <!-- Website favicon -->
+    <link rel="icon" type="image/png" href="/images/logo.png">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/rating.css">
+
+    <!-- mapbox -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.30.0/mapbox-gl.css" rel="stylesheet" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.30.0/mapbox-gl.js"></script>
+
+    
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top py-1">
+
+        <div class="container-fluid px-3">
+
+            <!-- Logo -->
+            <a class="navbar-brand fw-bold text-danger" href="/">
+                WanderLust
+            </a>
+
+            <!-- Mobile Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <!-- Left -->
+                <div class="navbar-nav">
+
+                    <a class="nav-link px-2 py-1" href="/">
+                        Home
+                    </a>
+
+                    <a class="nav-link px-2 py-1" href="/listings">
+                        All Listings
+                    </a>
+
+                    <a class="nav-link px-2 py-1" href="/listings/new">
+                        Add New Listing
+                    </a>
+
+                </div>
+
+                <!-- Right -->
+                <div class="navbar-nav ms-auto">
+                    <% if(!currUser) {%>
+                        <a class="nav-link px-2 py-1" href="/signup">Sign Up </a>
+
+                        <a class="nav-link px-2 py-1" href="/login">Log In </a>
+                        <% } %>
+                            <% if(currUser) {%>
+                                <a class="nav-link px-2 py-1" href="/logout">Log Out </a>
+                                <% } %>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="container my-4">
+        <!-- success message -->
+        <% if(success && success.length) {%>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <%= success %>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                    </button>
+            </div>
+            <% } %>
+
+                <!-- error message -->
+                <% if(error && error.length) {%>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <%= error %>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                            </button>
+                    </div>
+                    <% } %>
+
+                        <%- body %>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="border-top bg-light mt-5 py-4">
+
+        <div class="container">
+
+            <div class="row text-center text-md-start">
+
+                <!-- Brand -->
+                <div class="col-md-4 mb-3 mb-md-0">
+
+                    <h5 class="fw-bold text-danger">
+                        WanderLust
+                    </h5>
+
+                    <p class="text-muted mb-0">
+                        Discover amazing places around the world.
+                    </p>
+
+                </div>
+
+
+                <!-- Quick Links -->
+                <div class="col-md-4 mb-3 mb-md-0">
+
+                    <h6 class="fw-bold">
+                        Quick Links
+                    </h6>
+
+                    <div class="d-flex flex-column gap-1">
+
+                        <a href="/" class="text-decoration-none text-dark">
+                            Home
+                        </a>
+
+                        <a href="/listings" class="text-decoration-none text-dark">
+                            All Listings
+                        </a>
+
+                        <a href="/listings/new" class="text-decoration-none text-dark">
+                            Add New Listing
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Account -->
+                <div class="col-md-4">
+
+                    <h6 class="fw-bold">
+                        Account
+                    </h6>
+
+                    <div class="d-flex flex-column gap-1">
+
+                        <a href="/signup" class="text-decoration-none text-dark">
+                            Sign Up
+                        </a>
+
+                        <a href="/login" class="text-decoration-none text-dark">
+                            Log In
+                        </a>
+
+                        <a href="/logout" class="text-decoration-none text-dark">
+                            Log Out
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Copyright -->
+
+            <hr class="my-4">
+
+            <div class="text-center">
+
+                <p class="text-muted mb-0">
+                    © 2026 WanderLust. All Rights Reserved.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+    <script src="/js/script.js"></script>
+</body>
+
+</html>

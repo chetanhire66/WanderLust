@@ -1,0 +1,54 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+    <h1>Create New Listing</h1>
+
+    <form action="/listings" method="POST" novalidate class="needs-validation" enctype="multipart/form-data">
+
+        <div class="mb-3">
+            <label class="form-label">Title</label>
+
+            <input class="form-control" name="listing[title]" placeholder="Title" required>
+            <div class="valid-feedback">Title looks good!</div>
+        </div>
+
+
+        <div class="mb-3">
+            <label class="form-label">Description</label>
+
+            <textarea class="form-control" name="listing[description]" placeholder="Description" required></textarea>
+        </div>
+
+
+        <div class="mb-3">
+            <label class="form-label">Upload Listing Image</label>
+
+            <input class="form-control" name="listing[image]" type="file" accept="image/*" required>
+        </div>
+
+
+        <div class="mb-3">
+            <label class="form-label">Price</label>
+
+            <input class="form-control" name="listing[price]" placeholder="Price" type="number" required>
+        </div>
+
+
+        <div class="mb-3">
+            <label class="form-label">Location</label>
+
+            <input class="form-control" name="listing[location]" placeholder="Location" required>
+        </div>
+
+
+        <div class="mb-3">
+            <label class="form-label">Country</label>
+
+            <input class="form-control" name="listing[country]" placeholder="Country" required>
+        </div>
+
+
+        <button class="btn btn-primary">
+            Create
+        </button>
+
+    </form>

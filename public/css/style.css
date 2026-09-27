@@ -1,0 +1,43 @@
+body {
+    background-color: #f8f9fa;
+}
+
+
+/* ================= CARDS ================= */
+
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
+}
+
+.card {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    transition: 0.3s;
+}
+
+
+/* ================= SHOW PAGE IMAGE ================= */
+
+.listing-img {
+    height: 400px;
+    object-fit: cover;
+}
+
+/* map */
+
+#map {
+    height: 400px;
+    width: 80vh;
+}
+
+/* logo */
+.logo {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
